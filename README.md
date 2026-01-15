@@ -1,4 +1,5 @@
 # ⚡ Vajra (वज्र)
+![Vajra Logo](vajra_logo.png)
 ### *The Indestructible System Sentinel*
 
 **Vajra** is not just a system monitor; it is an **active guardian** for your PC. Unlike passive tools that simply watch your system freeze, Vajra proactively manages resources to keep your machine alive under heavy load.
