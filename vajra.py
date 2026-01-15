@@ -16,6 +16,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 from rich import box
+from rich.console import Console
 
 
 # =========================
@@ -507,6 +508,23 @@ Commands:
   help      Show this help message
 """)
 
+def show_splash():
+    """Display startup splash screen"""
+    console = Console()
+    ascii_art = r"""
+ [bold cyan]
+ __      __        _             
+ \ \    / /       (_)            
+  \ \  / /_ _  ___ _ _ __ __ _   
+   \ \/ / _` |/ __| | '__/ _` |  
+    \  / (_| | (__| | | | (_| |  
+     \/ \__,_|\___| |_|  \__,_|  
+ [/bold cyan][bold white]      SYSTEM SENTINEL v1.0[/]
+    """
+    console.print(ascii_art, justify="center")
+    console.print("\n[dim]Initializing guardian protocols...[/dim]", justify="center")
+    time.sleep(1.5)
+
 def tail_logs():
     print("Following vajra.log (Ctrl+C to stop)...")
     try:
@@ -554,6 +572,7 @@ def main():
         cmd = sys.argv[1].lower()
 
     if cmd == "start":
+        show_splash()
         start_monitor()
     elif cmd == "logs":
         tail_logs()
